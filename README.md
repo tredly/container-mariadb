@@ -6,9 +6,9 @@ Version 1.0.00.0 Apr 19 2016
 
 This container requires Tredly to be installed. https://github.com/vuid-com/tredly-build
 
-1. Open `grant.sql`. Change the database name and root user passwords to suit. Default is `tredly_mariadb`
-2. Open `Tredlyfile` and change the database password on line 141: `onStart= mysql -uroot --password=r9Ch2pY8tUKyA8TR vuid_help < /usr/local/install.sql`
-3. Add any SQL to `install.sql` you want to run when the container is created.
+1. Open `grant.sql`. Change the database name and root user passwords to suit. Default is database name is `tredly_mariadb` and default password is `super_secret_password`
+2. Open `Tredlyfile`. Change the database name and password on line 141: `onStart= mysql -uroot --password=super_secret_password tredly_mariadb < /usr/local/install.sql`.
+3. Add any SQL to `install.sql` you want to run when the container is created. The database used is specified in `grant.sql` and `Tredlyfile` 
 
 ### Changing the default port
 
