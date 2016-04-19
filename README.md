@@ -4,7 +4,7 @@ Version 1.0.0 Apr 19 2016
 
 ## Installation
 
-Requires Tredly 0.9.0 [https://github.com/vuid-com/tredly-host]
+**Requires [Tredly 0.9.0](https://github.com/vuid-com/tredly-host) to be installed.**
 
 1. Open `grant.sql`. Change the database name and root user passwords to suit. Default is database name is `container_mariadb` and default password is `super_secret_password`
 2. Open `Tredlyfile`. Change the database name and password on line 141: `onStart= mysql -uroot --password=super_secret_password container_mariadb < /usr/local/install.sql`.
