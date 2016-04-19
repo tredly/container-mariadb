@@ -84,7 +84,7 @@ layer4Proxy=
 # Incoming and outgoing Ports
 # Required if you want the container to be able to communicate with other container or the outside world (allowed=integer, any or blank | any=allPorts)
 # One port per line, tcp 80,443 outgoing and UDP 53 outgoing are required.
-tcpInPort=53306
+tcpInPort=3306
 udpInPort=
 tcpOutPort=80
 tcpOutPort=443
