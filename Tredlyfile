@@ -112,8 +112,6 @@ customDNS=
 
 installPackage=mariadb55-server
 
-onStart= mkdir /usr/local/etc
-
 fileFolderMapping=/my.cnf /usr/local/etc/
 fileFolderMapping=/grant.sql /usr/local/
 fileFolderMapping=/install.sql /usr/local/
