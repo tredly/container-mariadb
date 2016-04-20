@@ -118,7 +118,7 @@ fileFolderMapping=/install.sql /usr/local/
 
 onStart= chmod 1777 /tmp
 onStart= cd /usr/local/ && mysql_install_db --user=mysql --basedir=/usr/local --basedir=/usr/local --datadir=/var/db/mysql
-onStart= echo mysql_enable=\\"YES\\" >> /etc/rc.conf && service mysql-server start
+onStart= sysrc mysql_enable=yes && service mysql-server start
 onStart= mysql -uroot < /usr/local/grant.sql
 onStart= mysql -uroot --password=super_secret_password container_mariadb < /usr/local/install.sql
 
