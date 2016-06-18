@@ -1,10 +1,10 @@
 # MariaDB Container for Tredly
 
-Version 1.0.1 Mar 5 2016
+Version 1.0.2 June 18 2016
 
 ## Installation
 
-Requires Tredly 0.10.0 <https://github.com/vuid-com/tredly-host> or later
+Requires Tredly 1.0.0-rc.1 <https://github.com/tredly/tredly> or later
 
 1. Open `grant.sql`. Change the database name and root user passwords to suit. Default is database name is `container_mariadb` and default password is `super_secret_password`
 2. Open `Tredlyfile`. Change the database name and password on line 141: `onStart= mysql -uroot --password=super_secret_password container_mariadb < /usr/local/install.sql`.
