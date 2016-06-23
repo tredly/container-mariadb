@@ -1,0 +1,66 @@
+---
+  container:
+    operations:
+      onStop:
+        -
+          value: "service mysql-server stop"
+          type: "exec"
+      onCreate:
+        -
+          value: "mariadb55-server"
+          type: "installPackage"
+        -
+          source: "/my.cnf"
+          target: "/usr/local/etc/"
+          type: "fileFolderMapping"
+        -
+          source: "/grant.sql"
+          target: "/usr/local/"
+          type: "fileFolderMapping"
+        -
+          source: "/install.sql"
+          target: "/usr/local/"
+          type: "fileFolderMapping"
+        -
+          value: "chmod 1777 /tmp"
+          type: "exec"
+        -
+          value: "cd /usr/local/ && mysql_install_db --user=mysql --basedir=/usr/local --basedir=/usr/local --datadir=/var/db/mysql"
+          type: "exec"
+        -
+          value: "sysrc mysql_enable=yes && service mysql-server start"
+          type: "exec"
+        -
+          value: "mysql -uroot < /usr/local/grant.sql"
+          type: "exec"
+        -
+          value: "mysql -uroot --password=super_secret_password container_mariadb < /usr/local/install.sql"
+          type: "exec"
+    compatibleWith: "1.0.0"
+    startOrder: 1
+    replicate: false
+    customDNS: []
+    technicalOptions: {}
+    firewall:
+      ipv4Whitelist: []
+      allowPorts:
+        udp:
+          out:
+            - 53
+          in: []
+        tcp:
+          out:
+            - 80
+            - 443
+          in:
+            - 3306
+    proxy:
+      layer7Proxy: []
+      layer4Proxy: false
+    resourceLimits:
+      maxRam: "unlimited"
+      maxHdd: "unlimited"
+      maxCpu: "unlimited"
+    buildOptions:
+      publish: false
+    name: "container-mariadb"
