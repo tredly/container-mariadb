@@ -36,7 +36,6 @@
         -
           value: "mysql -uroot --password=super_secret_password container_mariadb < /usr/local/install.sql"
           type: "exec"
-    compatibleWith: "1.1.0"
     startOrder: 1
     replicate: false
     customDNS: []
